@@ -12,4 +12,5 @@ RUN pip install --no-cache-dir --upgrade pip && \
 
 COPY app ./app
 
-CMD ["python", "app/hello_quantum.py"]
+# Kjører alle eksemplene i læringsrekkefølge: én qubit først, deretter to.
+CMD ["sh", "-c", "python app/hello_quantum.py && python app/hello_quantum_with_two_bits.py"]
