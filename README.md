@@ -5,5 +5,5 @@ Første lokale quantum-prosjekt med Qiskit + Docker.
 ## Kjør med Docker
 
 ```bash
-docker build -t quantum-app-lab .
-docker run --rm quantum-app-lab
+docker build -t kvante .
+docker run --rm kvante
