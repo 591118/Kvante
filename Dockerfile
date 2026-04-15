@@ -4,6 +4,7 @@ WORKDIR /app
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
+ENV PYTHONIOENCODING=utf-8
 
 COPY requirements.txt .
 
@@ -12,5 +13,5 @@ RUN pip install --no-cache-dir --upgrade pip && \
 
 COPY app ./app
 
-# Kjører alle eksemplene i læringsrekkefølge: én qubit først, deretter to.
-CMD ["sh", "-c", "python app/hello_quantum.py && python app/hello_quantum_with_two_bits.py"]
+# Lokale simulatorer + IBM (IBM hoppes over uten IQP_API_TOKEN)
+CMD ["python", "-m", "app.main"]
